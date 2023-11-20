@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  container_name: subway-service
+  subway:
+    build:
+      context: .
+    environment:
+      - ENDPOINTS=wss://lb.drpc.org/ogws?network=ethereum&dkey=APIKEY

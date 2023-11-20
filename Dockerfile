@@ -17,7 +17,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install tini
 
 COPY --from=builder /app/target/release/subway /usr/local/bin
-COPY ./config.yml /app/config.yml
+COPY ./eth_config.yml /app/config.yml
 
 # checks
 RUN ldd /usr/local/bin/subway && \
