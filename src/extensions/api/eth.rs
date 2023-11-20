@@ -186,7 +186,7 @@ impl EthApi {
                     // cannot figure out finalized head
                     finalized_head_tx.send_replace(None);
                     let msg = e.to_string().to_lowercase();
-                    if msg.contains("methodnotfound") || msg.contains("invalid") {
+                    if msg.contains("methodnotfound") || msg.contains("invalid") || msg.contains("can't route your request") {
                         tracing::warn!("finalized head subscription is not supported: {e}");
                         // finalized head subscription is not supported
                         break;
